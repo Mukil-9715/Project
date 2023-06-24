@@ -2,6 +2,7 @@ import './App.css';
 import LoginPage from './Component/Pages/LoginPage';
 import {Routes, Route} from 'react-router-dom'
 import Registerform from './Component/Pages/Registerform';
+import Home from './Component/Pages/Home';
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       <Routes>
         <Route path='/' element={<LoginPage/>}/>
         <Route path='/Registerform' element={<Registerform/>}/>
-        {/* <Route path='/' element={<Registerform/>}/> */}
+        {/* <Route path='/Home' element={<Home/>}/> */}
+        <Route path='/Home' element={<Home/>}/>
       </Routes>
     </div>
   );

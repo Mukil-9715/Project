@@ -7,7 +7,9 @@ import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   const onFinish = (values) => {
+    if (values.remember===true){
     console.log("Received values of form: ", values);
+   }
   };
   return (
     <div className="">
