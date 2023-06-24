@@ -3,6 +3,10 @@
 .left {
   background-color: rgb(163, 180, 196);
 }
+.leftReg {
+  /* background-color: #7c3b49; */
+  background-color: #803c52;
+}
 .right {
   background-color: whitesmoke;
 }
@@ -52,6 +56,10 @@
   background-image: url("https://images.pexels.com/photos/379960/pexels-photo-379960.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   background-size: cover;
 }
+.backgroundImageReg {
+  background-image: url("https://images.pexels.com/photos/15767414/pexels-photo-15767414/free-photo-of-builders-renovating-residential-building.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+}
 .login-forms {
   width: 350px;
 }
@@ -74,4 +82,7 @@
 }
 .padbt{
   padding-bottom: 2rem;
+}
+.padbt1{
+  padding-bottom: 0.5rem;
 }

@@ -3,6 +3,7 @@ import "./LoginPage.css";
 import { Col, Row } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   const onFinish = (values) => {
@@ -19,7 +20,7 @@ const LoginPage = () => {
         </Col>
         <Col className="right flexr" flex={3}>
           <div className="parent flexcolst brr">
-            <div className="th padbt">Login to INSDI </div>
+            <div className="th padbt">Log in to INSDI </div>
             <div className="tp padbt">Get access to your Orders, Wishlist and Recommendations</div>
             <div>
               <Form
