@@ -15,12 +15,12 @@ const Registerform = () => {
   return (
     <div className="">
     <Row className="container">
-      <Col className="leftReg flexl" flex={2}>
+      <Col className="leftReg flexl" flex="650px">
         <div className="parent brl backgroundImageReg ">
           {/* <img src="https://images.pexels.com/photos/379960/pexels-photo-379960.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" width="200" />  */}
         </div>
       </Col>
-      <Col className="right flexr" flex={3}>
+      <Col className="right flexr" flex="auto">
         <div className="parent flexcolst brr">
           <div className="th padbt">Welcome to INSDI </div>
           <div className="tp padbt1">Looks like you're new here!</div>

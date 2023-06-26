@@ -15,12 +15,12 @@ const LoginPage = () => {
     <div className="">
       {/* <Divider orientation="center">Percentage columns</Divider> */}
       <Row className="container">
-        <Col className="left flexl" flex={2}>
+        <Col className="left flexl" flex="650px">
           <div className="parent brl backgroundImage ">
             {/* <img src="https://images.pexels.com/photos/379960/pexels-photo-379960.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" width="200" />  */}
           </div>
         </Col>
-        <Col className="right flexr" flex={3}>
+        <Col className="right flexr" flex="auto">
           <div className="parent flexcolst brr">
             <div className="th padbt">Log in to INSDI </div>
             <div className="tp padbt">Get access to your Orders, Wishlist and Recommendations</div>
@@ -80,7 +80,7 @@ const LoginPage = () => {
                   >
                     Log in
                   </Button>
-                  Or <Link to="/Registerform">register now!</Link>
+                  Don't havee an account? <Link to="/Registerform">Register now!</Link>
                 </Form.Item>
               </Form>
             </div>

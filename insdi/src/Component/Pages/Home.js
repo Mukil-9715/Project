@@ -1,10 +1,11 @@
 import React from 'react'
 import Carousel from '../Carousel'
-
+import Nav from '../Nav'
 const Home = () => {
   return (
     <div>
-        <Carousel />
+      <Nav />
+        {/* <Carousel /> */}
     </div>
   )
 }

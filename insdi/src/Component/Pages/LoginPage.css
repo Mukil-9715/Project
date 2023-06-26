@@ -5,7 +5,7 @@
 }
 .leftReg {
   /* background-color: #7c3b49; */
-  background-color: #803c52;
+  background-color: #e5a782 ;
 }
 .right {
   background-color: whitesmoke;
@@ -36,7 +36,7 @@
   width: 100%;
 }
 .parent {
-  height: 80vh;
+  height: 70vh;
   width: 100%;
   /* margin: 150px; */
   /* margin-inline:auto ;     */
