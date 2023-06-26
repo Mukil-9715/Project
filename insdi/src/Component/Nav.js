@@ -8,7 +8,7 @@ const onSearch = (value) => console.log(value);
 
 const Nav = () => {
   return (
-    <div className="main flex">
+    <div className="main_nav flex">
       <div className="flex">
         <div>
           <a href="">

@@ -12,16 +12,16 @@ const contentStyle = {
 const Carousels = () => (
   <Carousel autoplay>
     <div>
-      <h3 style={contentStyle}><img className='imgcar ' src='https://i.pinimg.com/474x/70/5e/ef/705eefcdf058d2b1429b190df774acae.jpg'alt='' width="100%" height="100%" /></h3>
+      <h3 style={contentStyle}><img className='imgcar ' src='https://cdn.shopify.com/s/files/1/0535/4871/2136/t/10/assets/homepagebanner21_yYFT.png?v=1677062579837'alt='' width="100%" height="100%" /></h3>
     </div>
     <div>
-      <h3 style={contentStyle}>2</h3>
+      <h3 style={contentStyle}><img className='imgcar ' src='https://images.pexels.com/photos/10401534/pexels-photo-10401534.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'alt='' width="100%" height="100%" /></h3>
     </div>
     <div>
-      <h3 style={contentStyle}>3</h3>
+      <h3 style={contentStyle}><img className='imgcar ' src='https://images.pexels.com/photos/5432294/pexels-photo-5432294.jpeg'alt='' width="100%" height="100%" /></h3>
     </div>
     <div>
-      <h3 style={contentStyle}>4</h3>
+      <h3 style={contentStyle}><img className='imgcar ' src='https://www.scaffoldingsolutions.com/wp-content/uploads/2021/07/Suspended-Scaffolding.jpg'alt='' width="100%" height="100%" /></h3>
     </div>
   </Carousel>
 );
