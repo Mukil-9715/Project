@@ -4,12 +4,14 @@ import { Col, Row } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
 import { Link } from "react-router-dom";
+// import Home from "./Home";
 
 const LoginPage = () => {
   const onFinish = (values) => {
     if (values.remember===true){
     console.log("Received values of form: ", values);
    }
+
   };
   return (
     <div className="">
@@ -73,13 +75,16 @@ const LoginPage = () => {
                 </Form.Item>
 
                 <Form.Item>
+                {/* <Link to="/Home"> */}
                   <Button
                     type="primary"
                     htmlType="submit"
                     className="login-form-button"
+                    // onClick={}
                   >
                     Log in
                   </Button>
+                  {/* </Link> */}
                   Don't havee an account? <Link to="/Registerform">Register now!</Link>
                 </Form.Item>
               </Form>
