@@ -63,7 +63,7 @@ const LoginPage = () => {
                     type="password"
                     placeholder="Password"
                   />
-                </Form.Item>
+                 </Form.Item>
                 <Form.Item>
                   <Form.Item name="remember" valuePropName="checked" noStyle>
                     <Checkbox>Remember me</Checkbox>

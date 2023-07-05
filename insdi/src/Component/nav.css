@@ -6,17 +6,16 @@
   background-color: #1a4368;
   font-family: "Poppins", sans-serif;
   color: #fff;
-  /* position: fixed; */
-  /* top: 0px; */
+  position: fixed;
+  top: 0px;
+  z-index:1;
+
 
 
 }
-/* .ma{
-    position: static;
-} */
 .Carousel{
-    /* position:relative; */
     margin-top: 5rem;
+
 
 }
 .img{

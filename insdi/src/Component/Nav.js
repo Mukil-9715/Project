@@ -8,7 +8,7 @@ const onSearch = (value) => console.log(value);
 
 const Nav = () => {
   return (
-    <div className="ma">
+    // <div className="ma">
     <div className="main_nav flex">
       <div className="flex">
         <div>
@@ -36,7 +36,7 @@ const Nav = () => {
         <ShoppingCartOutlined /> cart
       </div>
     </div>
-    </div>
+    // </div>
   );
 };
 

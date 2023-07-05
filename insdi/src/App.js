@@ -7,6 +7,7 @@ import Home from './Component/Pages/Home';
 function App() {
   return (
     <div>
+
       <Routes>
         <Route path='/' element={<LoginPage/>}/>
         <Route path='/Registerform' element={<Registerform/>}/>

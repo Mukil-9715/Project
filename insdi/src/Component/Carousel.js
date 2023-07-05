@@ -5,7 +5,7 @@ const contentStyle = {
   margin:0,
   height: '70vh',
   color: '#fff',
-  lineHeight: '70vh',
+  // lineHeight: '70vh',
   textAlign: 'center',
   background: '#364d79',
   

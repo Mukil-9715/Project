@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "username": "nydylajumi",
+      "password": "Pa$$w0rd!",
+      "confirmpassword": "Pa$$w0rd!",
+      "termsandcondition": true,
+      "id": 1
+    },
+    {
+      "username": "nydylajumi",
+      "password": "Pa$$w0rd!",
+      "confirmpassword": "Pa$$w0rd!",
+      "termsandcondition": true,
+      "id": 2
+    },
+    {
+      "username": "nydylajumi",
+      "password": "Pa$$w0rd!",
+      "confirmpassword": "Pa$$w0rd!",
+      "termsandcondition": true,
+      "id": 3
+    },
+    {
+      "username": "qixunym",
+      "password": "Pa$$w0rd!",
+      "confirmpassword": "Pa$$w0rd!",
+      "termsandcondition": true,
+      "id": 4
+    }
+  ]
+}
