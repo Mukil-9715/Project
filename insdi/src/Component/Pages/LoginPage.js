@@ -3,15 +3,58 @@ import "./LoginPage.css";
 import { Col, Row } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import Home from "./Home";
 
 const LoginPage = () => {
+  const usenavigate=useNavigate();
   const onFinish = (values) => {
-    if (values.remember===true){
-    console.log("Received values of form: ", values);
-   }
+    // console.log("hi",values.email);
 
+    const loginHandle = () => {
+      // e.preventDefault();
+      if (validation()) {
+        fetch("http://localhost:3000/posts/")
+          .then((res) => {
+            return res.json();
+          })
+          .then((resp) => {
+            // debugger
+            resp.map((response) => {
+              // console.log(resp[0].password === values.password);
+              if (response.email !== values.email) {
+                alert("please enter valid emails");
+              } else if (response.email === values.email) {
+                if (response.password === values.password) {
+                  usenavigate('/Home')
+                  console.log("success");
+                } else {
+                  alert("please enter valid password");
+                }
+              }
+            });
+          })
+          .catch((err) => {
+            alert("err");
+          });
+      }
+      //   if (values.remember===true){
+      //   console.log("Received values of form: ", values);
+      //  }
+    };
+    const validation = () => {
+      let result = true;
+      if (values.email === "" || values.email === null) {
+        result = false;
+        alert("Please Enter Username");
+      }
+      if (values.password === "" || values.password === null) {
+        result = false;
+        alert("Please Enter Password");
+      }
+      return result;
+    };
+    loginHandle();
   };
   return (
     <div className="">
@@ -25,7 +68,9 @@ const LoginPage = () => {
         <Col className="right flexr" flex="auto">
           <div className="parent flexcolst brr">
             <div className="th padbt">Log in to INSDI </div>
-            <div className="tp padbt">Get access to your Orders, Wishlist and Recommendations</div>
+            <div className="tp padbt">
+              Get access to your Orders, Wishlist and Recommendations
+            </div>
             <div>
               <Form
                 name="normal_login"
@@ -36,17 +81,17 @@ const LoginPage = () => {
                 onFinish={onFinish}
               >
                 <Form.Item
-                  name="username"
+                  name="email"
                   rules={[
                     {
                       required: true,
-                      message: "Please input your Username!",
+                      message: "Please input your Email!",
                     },
                   ]}
                 >
                   <Input
                     prefix={<UserOutlined className="site-form-item-icon" />}
-                    placeholder="Username"
+                    placeholder="Email"
                   />
                 </Form.Item>
                 <Form.Item
@@ -63,7 +108,7 @@ const LoginPage = () => {
                     type="password"
                     placeholder="Password"
                   />
-                 </Form.Item>
+                </Form.Item>
                 <Form.Item>
                   <Form.Item name="remember" valuePropName="checked" noStyle>
                     <Checkbox>Remember me</Checkbox>
@@ -75,17 +120,18 @@ const LoginPage = () => {
                 </Form.Item>
 
                 <Form.Item>
-                {/* <Link to="/Home"> */}
+                  {/* <Link to="/Home"> */}
                   <Button
                     type="primary"
                     htmlType="submit"
                     className="login-form-button"
-                    // onClick={}
+                    // onClick={onFinish}
                   >
                     Log in
                   </Button>
                   {/* </Link> */}
-                  Don't havee an account? <Link to="/Registerform">Register now!</Link>
+                  Don't havee an account?{" "}
+                  <Link to="/Registerform">Register now!</Link>
                 </Form.Item>
               </Form>
             </div>

@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 
 
 const Registerform = () => {
-  const navigate=useNavigate// const navigate=useNavigate
+  const usenavigate=useNavigate()
   const onFinish = (values) => {
     const handlesubmit = (e) => {
       // e.preventDefault();
@@ -23,7 +23,7 @@ const Registerform = () => {
         .then((res) => {
           toast.success("Registraction Successfully.");
           console.log(obj);
-          navigate('/Loginpage')
+          usenavigate('/')
         })
         .catch((err) => {
           toast.error("Failed : " + err.message);
@@ -63,17 +63,17 @@ const Registerform = () => {
                 onFinish={onFinish}
               >
                 <Form.Item
-                  name="username"
+                  name="email"
                   rules={[
                     {
                       required: true,
-                      message: "Please input your Username!",
+                      message: "Please input your Email!",
                     },
                   ]}
                 >
                   <Input
                     prefix={<UserOutlined className="site-form-item-icon" />}
-                    placeholder="Username"
+                    placeholder="Email"
                   />
                 </Form.Item>
                 <Form.Item
