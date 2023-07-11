@@ -5,7 +5,7 @@ import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify"; 
+// import { toast } from "react-toastify"; 
 
 
 const Registerform = () => {
@@ -21,12 +21,12 @@ const Registerform = () => {
           body: JSON.stringify(obj),
         })
         .then((res) => {
-          toast.success("Registraction Successfully.");
+          // toast.success("Registraction Successfully.");
           console.log(obj);
           usenavigate('/')
         })
         .catch((err) => {
-          toast.error("Failed : " + err.message);
+          // toast.error("Failed : " + err.message);
         });
       }
     };
@@ -120,7 +120,7 @@ const Registerform = () => {
                     type="primary"
                     htmlType="submit"
                     className="login-form-button"
-                    onClick={onFinish}
+                    // onClick={onFinish}
 
                   >
                     Sign Up

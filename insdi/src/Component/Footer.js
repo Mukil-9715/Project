@@ -6,6 +6,8 @@ import {
   GoogleOutlined,
   TwitterOutlined,
 } from "@ant-design/icons";
+import { useState,useEffect } from "react";
+
 
 const Footer = () => {
   return (

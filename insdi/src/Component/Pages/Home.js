@@ -4,21 +4,12 @@ import Nav from "../Nav";
 import Cards from "../Cards";
 import Footer from "../Footer";
 import "../../App.css";
-const Home = () => {
-  return (
+const Home = ({Data}) => {
+    return (
     <div>
       <Nav />
       <Carousel />
-      <div className="card1">
-      <div className="card">
-        
-        {Array(20)
-          .fill("")
-          .map((e) => {
-            return <Cards />;
-          })}
-      </div>
-      </div>
+       <Cards scafoldData = {Data}/>
       <Footer />
     </div>
   );
