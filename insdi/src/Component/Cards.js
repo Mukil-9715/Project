@@ -10,7 +10,10 @@ const { Meta } = Card;
 const Cards = ({ scafoldData }) => {
   // debugger;
   const navigate = useNavigate()
-
+  function getCartDetails(SeperateCardData){
+    console.log(SeperateCardData)
+    navigate('/products' )
+  }
   return (
     <div className="card">
       {scafoldData.map((e) => {
@@ -18,6 +21,7 @@ const Cards = ({ scafoldData }) => {
           <div>
             {/* // <div> */}
             <Card
+            onClick={()=>(getCartDetails(e))}
               className="cad"
               hoverable
               style={{
@@ -31,7 +35,7 @@ const Cards = ({ scafoldData }) => {
             >
               {/* </div> */}
               <div>
-                <Meta title={e.name} />
+                <Meta className="text_p" title={e.name} />
               </div>
             </Card>
           </div>

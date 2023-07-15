@@ -18,7 +18,7 @@ const Footer = () => {
             className="img padb"
             src="https://www.shutterstock.com/image-vector/design-concept-construction-flat-style-600w-540677266.jpg"
             alt=""
-            width="140px"
+            width="120px"
           />
         </div>
         <div className="text_h0 padb">INSDI</div>

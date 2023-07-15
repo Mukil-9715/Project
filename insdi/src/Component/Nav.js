@@ -14,7 +14,7 @@ const Nav = () => {
         <div>
           <a href="">
             <img
-              className="img"
+              className="img1"
               src="https://www.shutterstock.com/image-vector/design-concept-construction-flat-style-600w-540677266.jpg"
               alt=""
               width="60px"

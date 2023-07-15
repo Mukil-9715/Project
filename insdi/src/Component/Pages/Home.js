@@ -17,4 +17,3 @@ const Home = ({Data}) => {
 
 export default Home;
 
-// https://images.pexels.com/photos/10401534/pexels-photo-10401534.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2
