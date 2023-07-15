@@ -3,6 +3,8 @@ import "./nav.css";
 import "./Pages/LoginPage.css";
 import { useState } from "react";
 import { Button, Radio } from "antd";
+import { InfoCircleOutlined } from "@ant-design/icons";
+
 
 const ProductCart = () => {
   const [value, setValue] = useState(1);
@@ -11,8 +13,8 @@ const ProductCart = () => {
     setValue(e.target.value);
   };
   return (
-    <div className="flexr">
-      <div>
+    <div className="flexr  ProductCart">
+      <div className="maxwidth marl">
         <div className="padb text_h">Product Name</div>
         <div className="padb text_p">Description</div>
         <div className="padb text_h2">Prize</div>
@@ -34,7 +36,7 @@ const ProductCart = () => {
         </div>
         <div className="padb text_p">Available status</div>
 
-        <div className="flex">
+        <div className="flex padb">
           <div>
             <Button size="100px">Buy Now</Button>
           </div>
@@ -43,6 +45,16 @@ const ProductCart = () => {
               Add cart
             </Button>
           </div>
+        </div>
+        <div className="padb">
+          <div className="">Dispached in 5-6 days <InfoCircleOutlined /></div>
+          <div className="underline">Why the longer lead time? </div>
+          <hr></hr>
+        </div>
+
+        <div className="padb">
+          <div className="">Home Delivery - <important>$ 10</important> </div>
+          <hr></hr>
         </div>
       </div>
     </div>

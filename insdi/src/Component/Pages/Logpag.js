@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./LoginPage.css";
 import { Col, Row } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
-// import Home from "./Home";
 
-const LoginPage = ({respond}) => {
+const Logpag = ({respond}) => {
   const usenavigate = useNavigate();
   const onFinish = (values) => {
     const loginHandle = () => {
@@ -113,4 +112,4 @@ const LoginPage = ({respond}) => {
   );
 };
 
-export default LoginPage;
+export default Logpag;

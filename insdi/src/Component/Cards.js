@@ -1,8 +1,6 @@
 import React from "react";
 import { Card } from "antd";
 import "./nav.css";
-// import { useEffect, useState } from "react";
-// import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const { Meta } = Card;
@@ -12,7 +10,7 @@ const Cards = ({ scafoldData }) => {
   const navigate = useNavigate()
   function getCartDetails(SeperateCardData){
     console.log(SeperateCardData)
-    navigate('/products' )
+    navigate('/CardDetails' )
   }
   return (
     <div className="card">

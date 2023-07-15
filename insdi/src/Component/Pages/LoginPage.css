@@ -100,14 +100,23 @@
   width: 50%;
   /* margin-inline: auto; */
 }
-.d1{
-  
-  /* width: 50%; */
-  margin-inline: auto;
-}
 .proimg{
   /* height: ; */
   margin-inline: auto;
   /* object-position:-160px ; */
   /* object-fit: contain; */
+}
+.underline{
+  text-decoration: underline;
+}
+.ProductCart{
+  width: 100vw;
+
+}
+.marl{
+  margin: 0px 60px ;
+}
+.maxwidth{
+  width: 100%;
+  
 }
