@@ -1,22 +1,17 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import Carousel from "../Carousel";
 import Nav from "../Nav";
 import Cards from "../Cards";
 import Footer from "../Footer"; 
 import "../../App.css";
-import { Routes, Route } from "react-router-dom";
-import Productspage from "./ProductsPage"
 
-const Home = ({Data}) => {
-
+const Home = () => {
     return (
     <div>
-      <Routes>
-      <Route path='/CardDetails' element={<Productspage/>}/>
-      </Routes>
+      
       <Nav />
       <Carousel />
-       <Cards scafoldData = {Data}/>
+       <Cards />
       <Footer />
     </div>
   );

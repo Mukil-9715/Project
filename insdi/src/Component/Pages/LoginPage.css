@@ -103,6 +103,7 @@
 .proimg{
   /* height: ; */
   margin-inline: auto;
+  /* margin-block: auto; */
   /* object-position:-160px ; */
   /* object-fit: contain; */
 }
@@ -119,4 +120,15 @@
 .maxwidth{
   width: 100%;
   
+}
+.halwidth{
+  width: 40%;
+  
+}
+.downslide{
+  border: none;
+  background-color: transparent;
+}
+.ProductsPage{
+  margin-top: 5rem;
 }
