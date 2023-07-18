@@ -21,9 +21,13 @@ const Registerform = () => {
           body: JSON.stringify(obj),
         })
         .then((res) => {
+          
           // toast.success("Registraction Successfully.");
           console.log(obj);
-          usenavigate('/')
+          localStorage.setItem('batch 13', res )
+          debugger
+          // usenavigate('/')
+          
         })
         .catch((err) => {
           // toast.error("Failed : " + err.message);

@@ -9,7 +9,13 @@ import { Link, useNavigate } from "react-router-dom";
 const LoginPage = ({respond}) => {
   const usenavigate = useNavigate();
   const onFinish = (values) => {
+
+   
+
+
+
     const loginHandle = () => {
+      
       
       respond.map((response) => {
         if (response.email !== values.email) {
@@ -24,7 +30,7 @@ const LoginPage = ({respond}) => {
         }
       });
     };
-   
+  //  debugger
     loginHandle();
   };
   return (

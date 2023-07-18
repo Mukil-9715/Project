@@ -10,31 +10,33 @@ import AllDataScaffoldContext from "../ScaffoldContext/DataContext";
 const ProductsPage = () => {
   let{cartitems }= useContext (AllDataScaffoldContext)
  let fromhomecart =cartitems
+//  debugger
 
-  return Object.keys(fromhomecart).map((e) => {
-    let valueofthekey = fromhomecart[e];
+  // return Object.keys(fromhomecart).map((e) => {
+  //   let valueofthekey = fromhomecart[e];
 
   return (
     <div  className="ProductsPage">
       <Nav />
       <div className="productdisplay">
-        <div className="d flex0">
+        <div className="d flex0 ">
           <img
             className="proimg"
-            src={valueofthekey.image}
+            src={fromhomecart.image}
             alt="car"
             width=" 50%"
           />
         </div>
+        <div className="boderg"></div>
         <div className="d flexr">
-          <ProductCart CartDetails = {valueofthekey} />
+          <ProductCart CartDetails = {fromhomecart} />
         </div>
        
       </div>
       <Footer />
     </div>
   );
-});
+// });
 }
 
 export default ProductsPage;

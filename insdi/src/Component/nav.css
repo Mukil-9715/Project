@@ -135,8 +135,8 @@ li {
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 40px;
-  margin: 100px;
-  /* height: 400px; */
+  padding: 100px;
+  background-color: rgb(226, 227, 231);
 }
 .cad {
   overflow: "hidden";
@@ -145,5 +145,4 @@ li {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  
 }

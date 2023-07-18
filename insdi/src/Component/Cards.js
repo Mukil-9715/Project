@@ -9,19 +9,19 @@ const { Meta } = Card;
 const Cards = ( ) => {
   let{scaffold,cartitems, setcartitems }= useContext (AllDataScaffoldContext)
   let   changethestateofcartsitems = setcartitems
-   let  currentthestateofcartsitems =  cartitems
+  //  let  currentthestateofcartsitems =  cartitems
   let scafoldData=scaffold
   // debugger;
-  const navigate = useNavigate()
+  const navigate = useNavigate()  
   function getCartDetails(SeperateCardData){
 
-    let cartobject = JSON.parse(JSON.stringify(currentthestateofcartsitems));
-      cartobject[SeperateCardData.name] =
-           { ...SeperateCardData}
+    // let cartobject = JSON.parse(JSON.stringify(currentthestateofcartsitems));
+    //   cartobject[SeperateCardData.name] =
+    //        { ...SeperateCardData}
            
     // obj.push(cartobject);
-    console.log(cartobject);
-    changethestateofcartsitems(cartobject);
+    // console.log(cartobject);
+    changethestateofcartsitems(SeperateCardData);
 
 
 
