@@ -42,10 +42,11 @@ const Cards = ( ) => {
                 width: 240,
                 height: 350,
                 marginInline: "auto",
+                marginBlock: "auto",
                 objectFit: "contain",
               }}
             
-            cover={<img  className="img" alt="example" src={e.image} />}
+            cover={<img  className="img" alt={e.name} src={e.image} />}
             >
               {/* </div> */}
               <div>

@@ -2,6 +2,7 @@
   "posts": [
     {
       "email": "mukil15@gmail.com",
+      "username":"Mukil",
       "password": "Mukil",
       "confirmpassword": "Mukil",
       "termsandcondition": true,
@@ -9,47 +10,13 @@
     },
     {
       "email": "kabil@gmail.com",
+      "username":"Kabil",
       "password": "Kabil",
       "confirmpassword": "Kabil",
       "termsandcondition": true,
       "id": 2
-    },
-    {
-      "email": "arul@gmail.com",
-      "password": "Arul",
-      "confirmpassword": "Arul",
-      "termsandcondition": true,
-      "id": 3
-    },
-    {
-      "email": "Mukil@gmail.com",
-      "password": "Mukil",
-      "confirmpassword": "Mukil",
-      "termsandcondition": true,
-      "id": 4
-    },
-    {
-      "email": "Mukil@gmail.com",
-      "password": "Mukil",
-      "confirmpassword": "Mukil",
-      "termsandcondition": true,
-      "id": 5
-    },
-    {
-      "email": "Mukil@gmail.com",
-      "password": "Mukil",
-      "confirmpassword": "Mukil",
-      "termsandcondition": true,
-      "id": 6
-    },
-    {
-      "email": "Mukil@gmail.com",
-      "password": "Mukil",
-      "confirmpassword": "Mukil",
-      "termsandcondition": true,
-      "id": 7
     }
-  ],
+      ],
   "CardDetails": [
     {
       "id": "1",

@@ -6,6 +6,7 @@ const AllDataScaffoldContext = createContext();
 export function ScaffoldDataProvider  ({children}){
   const [cartitems, setcartitems] = useState({})
   let [scaffold , setScaffold ] = useState([])
+  const [postResponse, setpostResponse] = useState([]);
   useEffect   (() => {
     function getData() {
       fetch("http://localhost:3000/CardDetails")
@@ -18,8 +19,23 @@ export function ScaffoldDataProvider  ({children}){
     getData();
   }, []);
 
+
+  
+
+  useEffect(() => {
+    function getData() {
+      fetch("http://localhost:3000/posts")
+        .then((res) => res.json())
+        .then((message) => {
+          // debugger;
+          setpostResponse(message);
+        });
+    }
+    getData();
+  }, []);
+
   return (
-    <AllDataScaffoldContext.Provider value={{scaffold , setScaffold,cartitems, setcartitems }}>
+    <AllDataScaffoldContext.Provider value={{postResponse,scaffold , setScaffold,cartitems, setcartitems }}>
       {children}
     </AllDataScaffoldContext.Provider>
   );
