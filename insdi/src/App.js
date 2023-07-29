@@ -10,6 +10,8 @@ import AllDataScaffoldContext from "./Component/ScaffoldContext/DataContext";
 import Cart from "./Component/Cart";
 import Nav from "./Component/Nav";
 import Footer from "./Component/Footer";
+import Buypage from "./Component/Pages/Buypage";
+import Loginconfirm from "./Component/Loginconfirm";
 //implenting lazy loader
 
 // const Registerform = React.lazy(()=> import ("./Component/Pages/Registerform"))
@@ -32,6 +34,9 @@ function App() {
         {/* <Route path='/' element={<Home/>}/> */}
         <Route path="/CardDetails" element={<Productspage />} />
         <Route path="/Cart" element={<Cart />} />
+        <Route path="/Buy" element={<Buypage />} />
+        <Route path="/Loginconfirm" element={<Loginconfirm />} />
+        {/* <Route path="" element={<Cart />} /> */}
       </Routes>
       {/* </React.Suspense> */}
     </div>
@@ -39,3 +44,4 @@ function App() {
 }
 
 export default App;
+  

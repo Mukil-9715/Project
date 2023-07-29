@@ -7,15 +7,7 @@
       "confirmpassword": "Mukil",
       "termsandcondition": true,
       "id": 1
-    },
-    {
-      "email": "kabil@gmail.com",
-      "username":"Kabil",
-      "password": "Kabil",
-      "confirmpassword": "Kabil",
-      "termsandcondition": true,
-      "id": 2
-    }
+    }    
       ],
   "CardDetails": [
     {

@@ -139,3 +139,12 @@
   height: 80%;
   margin-block: auto;
 }
+.buyPage{
+  margin-top: 5rem;
+  background-color: rgb(226, 227, 231);
+}
+.step{
+  padding: 3rem;
+  width: 70%;
+  margin-inline: auto;
+}

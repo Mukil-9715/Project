@@ -3,15 +3,17 @@ import { ShoppingCartOutlined } from "@ant-design/icons";
 import "./nav.css";
 import { Input, Space } from "antd";
 // import { Link } from "react-router-dom";
-// import AllDataScaffoldContext from "./ScaffoldContext/DataContext";
+import AllDataScaffoldContext from "./ScaffoldContext/DataContext";
 const { Search } = Input;
 
-const onSearch = (value) => console.log(value);
 
 const Nav = () => {
+  const {setsearchvalue,searchvalue} = useContext(AllDataScaffoldContext)
+  const onSearch = (value) =>{ setsearchvalue(value)};
   // const {postResponse} = useContext(AllDataScaffoldContext)
   // const respond=postResponse 
   // debugger
+  console.log(searchvalue)
   // console.log(respond)
   return (
     // <div className="ma">
