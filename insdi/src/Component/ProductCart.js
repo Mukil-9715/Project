@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./nav.css";
 import "./Pages/LoginPage.css";
-import { useState } from "react";
+import AllDataScaffoldContext from "./ScaffoldContext/DataContext";
 import { Button, Radio } from "antd";
 import { InfoCircleOutlined } from "@ant-design/icons";
 import { Collapse } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const text1 = `Why the longer lead time? `;
 const text2 = `Why the longer lead time? `;
@@ -26,31 +26,30 @@ const items = [
 ];
 
 const ProductCart = ({ CartDetails }) => {
-  const [Prices, setPrices] = useState();
+  const  navigates = useNavigate()
+  let { Prices, setPrices } = useContext(AllDataScaffoldContext);
+  let prices = Prices;
+  let setprices = setPrices;
 
   let variantsize = CartDetails.heights;
   // const [value, setValue] = useState();
 
   const Changeprice = (e) => {
     // debugger
-
-    console.log(e.target.value);
     const value = e.target.value;
-    console.log("radio checked", e.target.value);
-
     const indexno = variantsize.indexOf(value);
     if (variantsize[indexno]) {
       console.log("hi");
-      setPrices(CartDetails.price[indexno]);
+      setprices(CartDetails.price[indexno]);
     }
-    // console.log(getprice);
   };
-  // console.log(value);
-
   const setChange = (key) => {
     console.log(key);
   };
-
+  function cart (){
+    navigates("/cart")
+    
+  }
   return (
     <div className="flexr  ProductCart">
       <div className="maxwidth marl">
@@ -58,7 +57,7 @@ const ProductCart = ({ CartDetails }) => {
         <div className="padb text_p">{CartDetails.description}</div>
         {/* <div className="padb text_h2">{CartDetails.price[0]}</div> */}
         {/* <div className="padb text_h2">{value}</div> */}
-        <div className="padb text_h2">{Prices}</div>
+        <div className="padb text_h2">{prices}</div>
         <div className="padb text_h2">
           <Radio.Group>
             {variantsize.map((e) => {
@@ -75,12 +74,12 @@ const ProductCart = ({ CartDetails }) => {
         <div className="flex padb halwidth">
           <div>
             <Button size="large">
-            <Link to="/buy">Buy Now</Link>
+              <Link to="/buy">Buy Now</Link>
             </Button>
           </div>
           <div>
-            <Button type="primary" size="large">
-              <Link to="/Cart">Add cart</Link>
+            <Button type="primary" size="large" onClick={cart}>
+              Add cart
             </Button>
           </div>
         </div>

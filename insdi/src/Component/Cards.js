@@ -9,7 +9,7 @@ const Cards = () => {
   let { scaffold, searchvalue, setcartitems } = useContext(
     AllDataScaffoldContext
   );
-  debugger
+  // debugger
   let scaffoldData = scaffold;
   let changethestateofcartsitems = setcartitems;
   const [searchdata, setsearchdata] = useState([]);
@@ -19,10 +19,10 @@ const Cards = () => {
   const navigate = useNavigate();
 
   // function hi() {
-    // let searchdatafilter = scaffold.filter((e) => {
-      // return e.name == searchvalue;
-    // })
-    // setsearchdata(searchdatafilter);
+  // let searchdatafilter = scaffold.filter((e) => {
+  // return e.name == searchvalue;
+  // })
+  // setsearchdata(searchdatafilter);
   // }
   // hi();
   // debugger
@@ -57,7 +57,14 @@ const Cards = () => {
                     marginBlock: "auto",
                     objectFit: "contain",
                   }}
-                  cover={<img className="img" alt={e.name} src={e.image} style={{height:250}}/>}
+                  cover={
+                    <img
+                      className="img"
+                      alt={e.name}
+                      src={e.image}
+                      style={{ height: 250 }}
+                    />
+                  }
                 >
                   {/* </div> */}
                   <div>

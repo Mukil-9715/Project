@@ -14,9 +14,6 @@ const LoginPage = () => {
   
   const onFinish = (values) => {
 
-
-
-
     const loginHandle = () => {
       
       

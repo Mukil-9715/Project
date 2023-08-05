@@ -1,16 +1,15 @@
-import React, { createContext, useEffect, useState } from 'react'
-
+import React, { createContext, useEffect, useState } from "react";
 
 const AllDataScaffoldContext = createContext();
 
-export function ScaffoldDataProvider  ({children}){
-
-  const [cartitems, setcartitems] = useState({})
-  let [scaffold , setScaffold ] = useState([])
+export function ScaffoldDataProvider({ children }) {
+  const [cartitems, setcartitems] = useState({});
+  let [scaffold, setScaffold] = useState([]);
   const [postResponse, setpostResponse] = useState([]);
-  const [searchvalue, setsearchvalue] = useState([])
+  const [searchvalue, setsearchvalue] = useState([]);
+  const [Prices, setPrices] = useState();
 
-  useEffect   (() => {
+  useEffect(() => {
     function getData() {
       fetch("http://localhost:3000/CardDetails")
         .then((res) => res.json())
@@ -21,9 +20,6 @@ export function ScaffoldDataProvider  ({children}){
     }
     getData();
   }, []);
-
-
-  
 
   useEffect(() => {
     function getData() {
@@ -38,7 +34,19 @@ export function ScaffoldDataProvider  ({children}){
   }, []);
 
   return (
-    <AllDataScaffoldContext.Provider value={{searchvalue, setsearchvalue, postResponse,scaffold , setScaffold,cartitems, setcartitems }}>
+    <AllDataScaffoldContext.Provider
+      value={{
+        Prices,
+        setPrices,
+        searchvalue,
+        setsearchvalue,
+        postResponse,
+        scaffold,
+        setScaffold,
+        cartitems,
+        setcartitems,
+      }}
+    >
       {children}
     </AllDataScaffoldContext.Provider>
   );

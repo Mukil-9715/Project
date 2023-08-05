@@ -7,6 +7,7 @@ import Loginconfirm from "../Loginconfirm";
 import Deliveryform from "../Deliveryform";
 import Ordersummary from "../Ordersummary";
 import Payment from "../Payment";
+import DOrdersummary from "../DOrdersummary";
 
 const Buypage = () => {
   return (
@@ -16,6 +17,7 @@ const Buypage = () => {
       <Loginconfirm/>
       <Deliveryform/>
       <Ordersummary/>
+      {/* <DOrdersummary/> */}
       <Payment/>
       <Footer />
     </div>
