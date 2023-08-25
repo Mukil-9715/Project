@@ -6,14 +6,15 @@ import { Input, Space } from "antd";
 import AllDataScaffoldContext from "./ScaffoldContext/DataContext";
 const { Search } = Input;
 
-
 const Nav = () => {
-  const {setsearchvalue,searchvalue} = useContext(AllDataScaffoldContext)
-  const onSearch = (value) =>{ setsearchvalue(value)};
+  const { searchvalue, setsearchvalue  } = useContext(AllDataScaffoldContext);
+  const onSearch = (value) => {
+    setsearchvalue(value);
+  };
   // const {postResponse} = useContext(AllDataScaffoldContext)
-  // const respond=postResponse 
+  // const respond=postResponse
   // debugger
-  console.log(searchvalue)
+  console.log(searchvalue);
   // console.log(respond)
   return (
     // <div className="ma">
@@ -52,7 +53,7 @@ const Nav = () => {
         </Link> */}
       </div>
     </div>
-    // </div>
+    // </div\
   );
 };
 

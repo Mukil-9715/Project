@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./LoginPage.css";
-import { Col, Row } from "antd";
+import { Col, Row, message } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
@@ -9,28 +9,53 @@ import AllDataScaffoldContext from "../ScaffoldContext/DataContext";
 
 const LoginPage = () => {
   const usenavigate = useNavigate();
-  const {postResponse} = useContext(AllDataScaffoldContext)
-  const respond=postResponse 
-  
-  const onFinish = (values) => {
 
+  const [respond, setrespond] = useState([])
+  useEffect(() => {
+    function getData() {
+      fetch("http://localhost:3000/posts")
+        .then((res) => res.json())
+        .then((message) => {
+          // debugger;
+          setrespond(message);
+        });
+    }
+    getData();
+  }, []);
+  
+  // const { postResponse } = useContext(AllDataScaffoldContext);
+  // const respond = postResponse;
+
+  const onFinish = (values) => {
     const loginHandle = () => {
-      
-      
+      let status = false;
       respond.map((response) => {
-        if (response.email !== values.email) {
-          alert("please enter valid emails");
-        } else if (response.email === values.email) {
+        if (response.email === values.email) {
+          status = true;
           if (response.password === values.password) {
+            message.success("welcome " + response.username);
             usenavigate("/Home");
             // console.log("success");
           } else {
-            alert("please enter valid password");
+            message.error("please enter valid Password");
+          }
+        } else if (response.username === values.email) {
+          status = true;
+          // debugger
+          if (response.password === values.password) {
+            message.success("welcome " + response.username);
+            usenavigate("/Home");
+            // console.log("success");
+          } else {
+            message.error("please enter valid Password");
           }
         }
       });
+      if (!status) {
+        message.error("please enter valid Email or Username");
+      }
     };
-  //  debugger
+    //  debugger
     loginHandle();
   };
   return (
@@ -68,7 +93,7 @@ const LoginPage = () => {
                 >
                   <Input
                     prefix={<UserOutlined className="site-form-item-icon" />}
-                    placeholder="Email"
+                    placeholder="Email or Username"
                   />
                 </Form.Item>
                 <Form.Item

@@ -21,8 +21,6 @@ import Loginconfirm from "./Component/Loginconfirm";
 function App() {
   let { setScaffold } = useContext(AllDataScaffoldContext);
 
-  
-
   return (
     <div>
       {/* <React.Suspense fallback ={<span>Loading .... </span>}> */}
@@ -31,12 +29,10 @@ function App() {
         <Route path="/" element={<LoginPage />} />
         <Route path="/Registerform" element={<Registerform />} />
         <Route path="/Home" element={<Home />} />
-        {/* <Route path='/' element={<Home/>}/> */}
         <Route path="/CardDetails" element={<Productspage />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Buy" element={<Buypage />} />
         <Route path="/Loginconfirm" element={<Loginconfirm />} />
-        {/* <Route path="" element={<Cart />} /> */}
       </Routes>
       {/* </React.Suspense> */}
     </div>
@@ -44,4 +40,3 @@ function App() {
 }
 
 export default App;
-  

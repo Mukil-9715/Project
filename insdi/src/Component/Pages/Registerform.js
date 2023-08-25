@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./LoginPage.css";
-import { Col, Row } from "antd";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
+import { Col, Row, message } from "antd";
+import { LockOutlined, UserOutlined, MailOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-// import { toast } from "react-toastify"; 
-
+import AllDataScaffoldContext from "../ScaffoldContext/DataContext";
 
 const Registerform = () => {
-  const usenavigate=useNavigate()
+  const {postResponse} = useContext(AllDataScaffoldContext)
+  const respond=postResponse 
+  console.log(respond)
+
+  const usenavigate = useNavigate();
   const onFinish = (values) => {
     const handlesubmit = (e) => {
       // e.preventDefault();
@@ -20,27 +23,53 @@ const Registerform = () => {
           headers: { "content-type": "application/json" },
           body: JSON.stringify(obj),
         })
-        .then((res) => {
-          
-          // toast.success("Registraction Successfully.");
-          console.log(obj);
-          localStorage.setItem('batch 13', res )
-          debugger
-          // usenavigate('/')
-          
-        })
-        .catch((err) => {
-          // toast.error("Failed : " + err.message);
-        });
+          .then((res) => {
+            console.log(obj);
+              message.success("Registed Successfully")
+            // localStorage.setItem('batch 13', res )
+            // debugger
+            setInterval(() => {
+              usenavigate('/')
+            }, 3500);
+          })
+          .catch((err) => {
+            message.success("Failed : " + err.message)
+          });
       }
     };
-    const passwordcheck =() =>{
-      if (values.password===values.confirmpassword){
-        handlesubmit();
-        
+    
+    const emailcheck= () => {
+      
+      let accFound = false;
+      respond.map((responds)=>{
+        if (responds.email === values.email){
+          accFound= true          
+          console.log(responds.email )
+          message.error("Already Register")
+        }
+      
+      })
+      if (!accFound ){
+        passwordcheck();
+      
       }
+      
     }
-    passwordcheck()
+    const passwordcheck = () => {
+      if (values.password === values.confirmpassword) {
+        if (values.termsandcondition === true ){
+          handlesubmit();
+        }
+        else{
+          
+          message.error("Check terms and condition")
+        }
+      }
+      else{
+        message.error("Password Doesn't match")
+      }
+    };
+    emailcheck()
   };
   return (
     <div className="">
@@ -67,6 +96,20 @@ const Registerform = () => {
                 onFinish={onFinish}
               >
                 <Form.Item
+                  name="username"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please input your Username!",
+                    },
+                  ]}
+                >
+                  <Input
+                    prefix={<UserOutlined className="site-form-item-icon" />}
+                    placeholder="Username"
+                  />
+                </Form.Item>
+                <Form.Item
                   name="email"
                   rules={[
                     {
@@ -76,8 +119,9 @@ const Registerform = () => {
                   ]}
                 >
                   <Input
-                    prefix={<UserOutlined className="site-form-item-icon" />}
+                    prefix={<MailOutlined className="site-form-item-icon" />}
                     placeholder="Email"
+                    // onChange={}
                   />
                 </Form.Item>
                 <Form.Item
@@ -111,7 +155,11 @@ const Registerform = () => {
                   />
                 </Form.Item>
                 <Form.Item>
-                  <Form.Item name="termsandcondition" valuePropName="checked" noStyle>
+                  <Form.Item
+                    name="termsandcondition"
+                    valuePropName="checked"
+                    noStyle
+                  >
                     <Checkbox>
                       By continuing, you agree to INSDI's{" "}
                       <Link to="/">Terms of Use</Link> and{" "}
@@ -125,7 +173,6 @@ const Registerform = () => {
                     htmlType="submit"
                     className="login-form-button"
                     // onClick={onFinish}
-
                   >
                     Sign Up
                   </Button>
