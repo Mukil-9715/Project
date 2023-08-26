@@ -3,6 +3,7 @@ import { Card } from "antd";
 import "./nav.css";
 import { useNavigate } from "react-router-dom";
 import AllDataScaffoldContext from "./ScaffoldContext/DataContext";
+import { Empty } from 'antd';
 
 const { Meta } = Card;
 const Cards = () => {
@@ -24,7 +25,7 @@ const Cards = () => {
       console.log(scaffoldData);
       const checkSearch = searchvalue.toString().toLowerCase()
       if (data.name.toLowerCase().includes(checkSearch)) {
-        debugger
+        // debugger
         filtered.push(data);
         // setfiltredData(filtered);
       }
@@ -81,37 +82,37 @@ const Cards = () => {
                 </div>
               );
             })
-          : 
-        scaffoldData.map((e) => {
-            return (
-              <div>
-                <Card
-                  onClick={() => getCartDetails(e)}
-                  className="cad"
-                  hoverable
-                  style={{
-                    width: 240,
-                    height: 350,
-                    marginInline: "auto",
-                    marginBlock: "auto",
-                    objectFit: "contain",
-                  }}
-                  cover={
-                    <img
-                      className="img"
-                      alt={e.name}
-                      src={e.image}
-        style={{ height : 250 }}
-        />
-                  }
-                >
-                  <div>
-                    <Meta className="text_p" title={e.name} />
-                  </div>
-                </Card>
-              </div>
-            );
-        })
+          : <Empty />
+        // scaffoldData.map((e) => {
+        //     return (
+        //       <div>
+        //         <Card
+        //           onClick={() => getCartDetails(e)}
+        //           className="cad"
+        //           hoverable
+        //           style={{
+        //             width: 240,
+        //             height: 350,
+        //             marginInline: "auto",
+        //             marginBlock: "auto",
+        //             objectFit: "contain",
+        //           }}
+        //           cover={
+        //             <img
+        //               className="img"
+        //               alt={e.name}
+        //               src={e.image}
+        // style={{ height : 250 }}
+        // />
+        //           }
+        //         >
+        //           <div>
+        //             <Meta className="text_p" title={e.name} />
+        //           </div>
+        //         </Card>
+        //       </div>
+        //     );
+        // })
       }
     </div>
   );

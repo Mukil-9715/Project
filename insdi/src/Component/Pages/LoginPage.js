@@ -8,7 +8,14 @@ import AllDataScaffoldContext from "../ScaffoldContext/DataContext";
 // import Home from "./Home";
 
 const LoginPage = () => {
+  const { setusername } = useContext(AllDataScaffoldContext);
+  // const respond = postResponse;
   const usenavigate = useNavigate();
+
+    useEffect(() => {
+      localStorage.clear()
+    }, []);
+    
 
   const [respond, setrespond] = useState([])
   useEffect(() => {
@@ -16,6 +23,7 @@ const LoginPage = () => {
       fetch("http://localhost:8000/posts")
         .then((res) => res.json())
         .then((message) => {
+          // localStorage.setItem("Id", message)
           // debugger;
           setrespond(message);
         });
@@ -23,8 +31,6 @@ const LoginPage = () => {
     getData();
   }, []);
   
-  // const { postResponse } = useContext(AllDataScaffoldContext);
-  // const respond = postResponse;
 
   const onFinish = (values) => {
     const loginHandle = () => {
@@ -34,6 +40,8 @@ const LoginPage = () => {
           status = true;
           if (response.password === values.password) {
             message.success("welcome " + response.username);
+            setusername(response.username)
+            localStorage.setItem("username",values.email )
             usenavigate("/Home");
             // console.log("success");
           } else {
@@ -44,7 +52,9 @@ const LoginPage = () => {
           // debugger
           if (response.password === values.password) {
             message.success("welcome " + response.username);
+            setusername(response.username)
             usenavigate("/Home");
+            localStorage.setItem("username",values.email )
             // console.log("success");
           } else {
             message.error("please enter valid Password");

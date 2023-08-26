@@ -1,13 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./LoginPage.css";
 import ProductCart from "../ProductCart";
 import Nav from "../Nav";
 import Footer from "../Footer";
 import AllDataScaffoldContext from "../ScaffoldContext/DataContext";
 import ScrollToTop from "../ScrollToTop";
+import { useNavigate } from "react-router-dom";
 // import InfoCircleOutlined from
 
 const ProductsPage = () => {
+  const navigation = useNavigate() 
+  useEffect(() => {
+    let username = localStorage.getItem('username')
+    if (username === "" || username === null){
+      navigation("/")
+    }
+  }, [])
   let { cartitems } = useContext(AllDataScaffoldContext);
   let fromhomecart = cartitems;
   //  debugger

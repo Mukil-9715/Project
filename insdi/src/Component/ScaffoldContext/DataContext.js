@@ -8,6 +8,7 @@ export function ScaffoldDataProvider({ children }) {
   const [postResponse, setpostResponse] = useState([]);
   const [searchvalue, setsearchvalue] = useState([]);
   const [Prices, setPrices] = useState();
+  const [username, setusername] = useState();
 
   useEffect(() => {
     function getData() {
@@ -45,6 +46,8 @@ export function ScaffoldDataProvider({ children }) {
         setScaffold,
         cartitems,
         setcartitems,
+        username,
+        setusername,
       }}
     >
       {children}

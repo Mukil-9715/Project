@@ -4,11 +4,18 @@ import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import AllDataScaffoldContext from "./ScaffoldContext/DataContext";
 // import Nav from './Nav';
 
 const Loginconfirm = () => {
+  const navigation = useNavigate() 
+  useEffect(() => {
+    let username = localStorage.getItem('username')
+    if (username === "" || username === null){
+      navigation("/")
+    }
+  }, [])
   const usenavigate = useNavigate();
   const { postResponse } = useContext(AllDataScaffoldContext);
   const respond = postResponse;
