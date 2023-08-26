@@ -6,16 +6,16 @@ import { Input, Space } from "antd";
 import AllDataScaffoldContext from "./ScaffoldContext/DataContext";
 const { Search } = Input;
 
+
 const Nav = () => {
   const { searchvalue, setsearchvalue  } = useContext(AllDataScaffoldContext);
-  const onSearch = (value) => {
-    setsearchvalue(value);
-  };
-  // const {postResponse} = useContext(AllDataScaffoldContext)
-  // const respond=postResponse
-  // debugger
+  const handleSearch=(values)=>{
+    setsearchvalue(values);
+    // onSearch(values);
+  }
   console.log(searchvalue);
-  // console.log(respond)
+
+
   return (
     // <div className="ma">
     <div className="main_nav flex">
@@ -36,7 +36,8 @@ const Nav = () => {
         <Space className="searchBox" direction="vertical">
           <Search
             placeholder="Search For products"
-            onSearch={onSearch}
+            value={searchvalue}
+            onChange={(e)=>{handleSearch(e.target.value)}}
             enterButton
           />
         </Space>

@@ -15,6 +15,8 @@
 }
 .img {
   border-radius: 40px;
+  padding-top: 25px;
+  object-fit: contain;
 }
 .img1 {
   border-radius: 20px;
@@ -62,22 +64,18 @@
 .text_h0 {
   font-size: 2.5rem;
   font-family: "Poppins", sans-serif;
-
 }
 .text_h {
   font-size: 2rem;
   font-family: "Poppins", sans-serif;
-
 }
 .text_h2 {
   font-size: 1.5rem;
   font-family: "Poppins", sans-serif;
-
 }
 .text_p {
   font-size: 1.2rem;
   font-family: "Poppins", sans-serif;
-  
 }
 
 .imgcar {
@@ -142,26 +140,26 @@ li {
   gap: 40px;
   padding: 100px;
 }
- /* .cad {
+/* .cad {
   overflow: "hidden";
   margin: 1.5rem;
 }
 .cads {
   margin: 1.5rem;
 } */
-.productP{
+.productP {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-.maincart{
+.maincart {
   height: 100%;
   margin-block: auto;
   width: 80vw;
   /* background-color: blue; */
   margin-inline: auto;
 }
-.cart{
+.cart {
   /* height: 100%; */
   width: 75vw;
   height: 80vh;
@@ -169,28 +167,26 @@ li {
   margin-inline: auto;
   margin-block: auto;
 }
-.links{
+.links {
   color: #fff;
   text-decoration: none;
 }
-.bclr{
+.bclr {
   margin-top: 5rem;
   background-color: rgb(226, 227, 231);
 }
-.loginconfirm{
+.loginconfirm {
   height: 100%;
   background-color: rgb(226, 227, 231);
-  padding : 25px; 
+  padding: 25px;
   /* width: 100vw; */
 }
-.brh-loginconfirm{
+.brh-loginconfirm {
   margin-inline: auto;
   width: 80%;
-  border:2px  rgb(205, 205, 207) solid ;
-  padding:30px;
-  
+  border: 2px rgb(205, 205, 207) solid;
+  padding: 30px;
 }
-.width8{
+.width8 {
   width: 80%;
-  
 }
