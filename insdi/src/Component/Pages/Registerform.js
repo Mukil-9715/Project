@@ -18,7 +18,7 @@ const Registerform = () => {
       // e.preventDefault();
       let obj = values;
       if (values.termsandcondition === true) {
-        fetch("http://localhost:3000/posts", {
+        fetch("http://localhost:8000/posts", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(obj),

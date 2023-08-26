@@ -13,7 +13,7 @@ const LoginPage = () => {
   const [respond, setrespond] = useState([])
   useEffect(() => {
     function getData() {
-      fetch("http://localhost:3000/posts")
+      fetch("http://localhost:8000/posts")
         .then((res) => res.json())
         .then((message) => {
           // debugger;

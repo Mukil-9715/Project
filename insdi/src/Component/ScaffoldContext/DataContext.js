@@ -11,7 +11,7 @@ export function ScaffoldDataProvider({ children }) {
 
   useEffect(() => {
     function getData() {
-      fetch("http://localhost:3000/CardDetails")
+      fetch("http://localhost:8000/CardDetails")
         .then((res) => res.json())
         .then((message) => {
           // debugger;
@@ -23,7 +23,7 @@ export function ScaffoldDataProvider({ children }) {
 
   useEffect(() => {
     function getData() {
-      fetch("http://localhost:3000/posts")
+      fetch("http://localhost:8000/posts")
         .then((res) => res.json())
         .then((message) => {
           // debugger;
