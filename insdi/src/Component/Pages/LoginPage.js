@@ -41,7 +41,7 @@ const LoginPage = () => {
           if (response.password === values.password) {
             message.success("welcome " + response.username);
             setusername(response.username)
-            localStorage.setItem("username",values.email )
+            localStorage.setItem("username",response.username )
             usenavigate("/Home");
             // console.log("success");
           } else {
@@ -54,7 +54,7 @@ const LoginPage = () => {
             message.success("welcome " + response.username);
             setusername(response.username)
             usenavigate("/Home");
-            localStorage.setItem("username",values.email )
+            localStorage.setItem("username",response.username )
             // console.log("success");
           } else {
             message.error("please enter valid Password");

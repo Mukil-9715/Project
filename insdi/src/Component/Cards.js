@@ -3,7 +3,7 @@ import { Card } from "antd";
 import "./nav.css";
 import { useNavigate } from "react-router-dom";
 import AllDataScaffoldContext from "./ScaffoldContext/DataContext";
-import { Empty } from 'antd';
+import { Empty } from "antd";
 
 const { Meta } = Card;
 const Cards = () => {
@@ -11,7 +11,7 @@ const Cards = () => {
   let { scaffold, searchvalue, setcartitems } = useContext(
     AllDataScaffoldContext
   );
-  
+
   const scaffoldData = scaffold;
   // const [filtredData, setfiltredData] = useState([]);
   // console.log(filtredData);
@@ -23,7 +23,7 @@ const Cards = () => {
     // debugger;
     scaffoldData.filter((data) => {
       console.log(scaffoldData);
-      const checkSearch = searchvalue.toString().toLowerCase()
+      const checkSearch = searchvalue.toString().toLowerCase();
       if (data.name.toLowerCase().includes(checkSearch)) {
         // debugger
         filtered.push(data);
@@ -50,70 +50,37 @@ const Cards = () => {
   }
   return (
     <div className="card">
-      {
-        filtered != 0
-          ? filtered.map((e) => {
-              return (
+      {filtered !== 0 ? (
+        filtered.map((e) => {
+          return (
+            <div>
+              <Card
+                onClick={() => getCartDetails(e)}
+                className="cad"
+                hoverable
+                style={{
+                  width: 250,
+                  height: 350,
+                }}
+                cover={
+                  <img
+                    className="img"
+                    alt={e.name}
+                    src={e.image}
+                    style={{ height: 250 }}
+                  />
+                }
+              >
                 <div>
-                  <Card
-                    onClick={() => getCartDetails(e)}
-                    className="cad"
-                    hoverable
-                    style={{
-                      width: 240,
-                      height: 350,
-                      marginInline: "auto",
-                      marginBlock: "auto",
-                      objectFit: "contain",
-                    }}
-                    cover={
-                      <img
-                        className="img"
-                        alt={e.name}
-                        src={e.image}
-                        style={{ height: 250 }}
-                      />
-                    }
-                  >
-                    <div>
-                      <Meta className="text_p" title={e.name} />
-                    </div>
-                  </Card>
+                  <Meta className="text_p" title={e.name} />
                 </div>
-              );
-            })
-          : <Empty />
-        // scaffoldData.map((e) => {
-        //     return (
-        //       <div>
-        //         <Card
-        //           onClick={() => getCartDetails(e)}
-        //           className="cad"
-        //           hoverable
-        //           style={{
-        //             width: 240,
-        //             height: 350,
-        //             marginInline: "auto",
-        //             marginBlock: "auto",
-        //             objectFit: "contain",
-        //           }}
-        //           cover={
-        //             <img
-        //               className="img"
-        //               alt={e.name}
-        //               src={e.image}
-        // style={{ height : 250 }}
-        // />
-        //           }
-        //         >
-        //           <div>
-        //             <Meta className="text_p" title={e.name} />
-        //           </div>
-        //         </Card>
-        //       </div>
-        //     );
-        // })
-      }
+              </Card>
+            </div>
+          );
+        })
+      ) : (
+        <Empty />
+      )}
     </div>
   );
 };

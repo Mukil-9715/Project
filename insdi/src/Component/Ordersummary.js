@@ -8,16 +8,30 @@ const Ordersummary = () => {
   let prices = Prices;
   const [count, setcount] = useState(0);
   const [Tlpri, setTlpri] = useState(0);
-  const Tlprices = () => {
+  // let count =1 
+  console.log(count);
+  // let Tlcount 
+
+  const handleCount = (plusororminus ) => {
     const noprice = +prices.replace("$", "").replace(",", "");
-    debugger;
-    return setTlpri(noprice * count);
+    console.log(noprice);
+   if (plusororminus === "plus") {
+    // count += 1
+    // count++ 
+    setcount(count + 1) 
+   }
+   else if(plusororminus === "minus"){
+    setcount(count   - 1) 
+  }
+  //  (plusororminus === "plus" ? Tlprice +1 : Tlprice -1);
+  setTlpri(count * noprice );
+  console.log(Tlpri);
   };
   // debugger
 
   return (
     <div className="loginconfirm">
-      <div className="brh-loginconfirm ">
+      <div className="brh-loginconfirm "> 
         <div className="  flex">
           <div className="width8 flex">
             <div>
@@ -33,19 +47,13 @@ const Ordersummary = () => {
               <div>{Tlpri}</div>
               <div>
                 <Button
-                  onClick={() => {
-                    setcount(count - 1);
-                    Tlprices();
-                  }}
+                  onClick={()=>{handleCount("minus")}}
                 >
                   -
                 </Button>
                 <span style={{ padding: 20 }}>{count}</span>
                 <Button
-                  onClick={() => {
-                    setcount(count + 1);
-                    Tlprices();
-                  }}
+                  onClick={()=>{handleCount("plus")}}
                 >
                   +
                 </Button>

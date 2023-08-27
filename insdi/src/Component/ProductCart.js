@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./nav.css";
 import "./Pages/LoginPage.css";
 import AllDataScaffoldContext from "./ScaffoldContext/DataContext";
-import { Button, Radio } from "antd";
+import { Button, Radio, message } from "antd";
 import { InfoCircleOutlined } from "@ant-design/icons";
 import { Collapse } from "antd";
 import { Link, useNavigate } from "react-router-dom";
@@ -32,7 +32,7 @@ const ProductCart = ({ CartDetails }) => {
   let setprices = setPrices;
 
   let variantsize = CartDetails.heights;
-  // const [value, setValue] = useState();
+  const [values, setValues] = useState("");
 
   const Changeprice = (e) => {
     // debugger
@@ -42,14 +42,23 @@ const ProductCart = ({ CartDetails }) => {
       console.log("hi");
       setprices(CartDetails.price[indexno]);
     }
+    setValues(value)
+    
   };
+
   const setChange = (key) => {
     console.log(key);
   };
-  function cart (){
-    navigates("/cart")
+  function handlecart (){
+    values ? navigates("/cart") : message.warning("Select Varient")
     
   }
+  function handlebuy (){
+    values ? navigates("/buy") : message.warning("Select Varient")
+    
+    
+  }
+  
   return (
     <div className="flexr  ProductCart">
       <div className="maxwidth marl">
@@ -73,12 +82,12 @@ const ProductCart = ({ CartDetails }) => {
 
         <div className="flex padb halwidth">
           <div>
-            <Button size="large">
-              <Link to="/buy">Buy Now</Link>
+            <Button onClick={handlebuy} size="large">
+              Buy Now
             </Button>
           </div>
           <div>
-            <Button type="primary" size="large" onClick={cart}>
+            <Button type="primary" size="large" onClick={handlecart}>
               Add cart
             </Button>
           </div>
