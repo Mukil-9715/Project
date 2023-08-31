@@ -7,13 +7,13 @@ import AllDataScaffoldContext from "./ScaffoldContext/DataContext";
 const { Search } = Input;
 
 const Nav = () => {
-  const { searchvalue, username, setsearchvalue } = useContext(AllDataScaffoldContext);
+  const { searchvalue, setsearchvalue } = useContext(AllDataScaffoldContext);
   const handleSearch = (values) => {
     setsearchvalue(values);
     // onSearch(values);
   };
   console.log(searchvalue);
-  // const Username = localStorage.getItem("username");
+  const Username = localStorage.getItem("username");
   return (
     // <div className="ma">
     <div className="main_nav flex">
@@ -35,7 +35,7 @@ const Nav = () => {
           <Search
             placeholder="Search For products"
             value={searchvalue}
-            onChange={(e) => {
+            onChange={(e) => {  
               handleSearch(e.target.value);
             }}
             enterButton
@@ -43,7 +43,7 @@ const Nav = () => {
         </Space>
       </div>
       <div className="text_h2 flex " style={{ width: "300px" }}>
-        <div>{username}</div>
+        <div>{Username}</div>
         <Link to="/cart" className="links">
           <ShoppingCartOutlined /> cart
         </Link>

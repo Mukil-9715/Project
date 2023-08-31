@@ -7,11 +7,11 @@ import LogPage from "./Component/Pages/Logpag";
 import Home from "./Component/Pages/Home";
 import Productspage from "./Component/Pages/ProductsPage";
 import AllDataScaffoldContext from "./Component/ScaffoldContext/DataContext";
-import Cart from "./Component/Cart";
 import Nav from "./Component/Nav";
 import Footer from "./Component/Footer";
 import Buypage from "./Component/Pages/Buypage";
 import Loginconfirm from "./Component/Loginconfirm";
+import Cart from "./Component/Pages/Cart";
 //implenting lazy loader
 
 // const Registerform = React.lazy(()=> import ("./Component/Pages/Registerform"))
