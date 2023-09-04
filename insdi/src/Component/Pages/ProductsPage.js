@@ -11,11 +11,18 @@ import { useNavigate } from "react-router-dom";
 const ProductsPage = () => {
   const navigation = useNavigate() 
   useEffect(() => {
+    if (fromhomecart === "" || fromhomecart === null){
+      navigation("/home")
+    }
+  }, [])
+  
+  useEffect(() => {
     let username = localStorage.getItem('username')
     if (username === "" || username === null){
       navigation("/")
     }
   }, [])
+
   let { cartitems } = useContext(AllDataScaffoldContext);
   let fromhomecart = cartitems;
   //  debugger

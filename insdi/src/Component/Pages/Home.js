@@ -9,12 +9,12 @@ import ScrollToTop from "../ScrollToTop";
 
 const Home = () => {
   const navigation = useNavigate() 
-  useEffect(() => {
-    let username = localStorage.getItem('username')
-    if (username === "" || username === null){
-      navigation("/")
-    }
-  }, [])
+  // useEffect(() => {
+    // let username = localStorage.getItem('username')
+    // if (username === "" || username === null){
+      // navigation("/") 
+    // }
+  // }, [])`
   
   return (
     <div>

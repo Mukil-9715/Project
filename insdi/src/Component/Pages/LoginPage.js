@@ -8,8 +8,8 @@ import AllDataScaffoldContext from "../ScaffoldContext/DataContext";
 // import Home from "./Home";
 
 const LoginPage = () => {
-  const { setusername } = useContext(AllDataScaffoldContext);
-  // const respond = postResponse;
+  const { postResponse, setusername } = useContext(AllDataScaffoldContext);
+  const respond = postResponse;
   const usenavigate = useNavigate();
 
     useEffect(() => {
@@ -17,19 +17,19 @@ const LoginPage = () => {
     }, []);
     
 
-  const [respond, setrespond] = useState([])
-  useEffect(() => {
-    function getData() {
-      fetch("http://localhost:8000/posts")
-        .then((res) => res.json())
-        .then((message) => {
-          // localStorage.setItem("Id", message)
-          // debugger;
-          setrespond(message);
-        });
-    }
-    getData();
-  }, []);
+  // const [respond, setrespond] = useState([])
+  // useEffect(() => {
+  //   function getData() {
+  //     fetch("http://localhost:8000/posts")
+  //       .then((res) => res.json())
+  //       .then((message) => {
+  //         // localStorage.setItem("Id", message)
+  //         // debugger;
+  //         setrespond(message);
+  //       });
+  //   }
+  //   getData();
+  // }, []);
   
 
   const onFinish = (values) => {
@@ -88,7 +88,7 @@ const LoginPage = () => {
                 name="normal_login"
                 className="login-forms"
                 initialValues={{
-                  remember: true,
+                  remember: false,
                 }}
                 onFinish={onFinish}
               >

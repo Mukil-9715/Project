@@ -8,8 +8,9 @@ import { useNavigate } from "react-router-dom";
 import AllDataScaffoldContext from "../ScaffoldContext/DataContext";
 
 const Registerform = () => {
-  const {postResponse} = useContext(AllDataScaffoldContext)
+  const {postResponse, setrefresh} = useContext(AllDataScaffoldContext)
   const respond=postResponse 
+  const refresh=setrefresh 
   console.log(respond)
 
   const usenavigate = useNavigate();
@@ -27,6 +28,8 @@ const Registerform = () => {
             console.log(obj);
               message.success("Registed Successfully")
             // localStorage.setItem('batch 13', res )
+             refresh(obj)
+
             // debugger
             setInterval(() => {
               usenavigate('/')

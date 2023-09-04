@@ -7,9 +7,11 @@ export function ScaffoldDataProvider({ children }) {
   let [scaffold, setScaffold] = useState([]);
   const [postResponse, setpostResponse] = useState([]);
   const [searchvalue, setsearchvalue] = useState([]);
-  const [Prices, setPrices] = useState();
+  const [Prices, setPrices] = useState("$0");
   const [username, setusername] = useState();
-
+  const [ currentthestateofcartsitems, changethestateofcartsitems] = useState();
+  const [refresh, setrefresh] = useState({});
+  const [cartObject, setcartObject] = useState({});
   useEffect(() => {
     function getData() {
       fetch("http://localhost:8000/CardDetails")
@@ -32,7 +34,7 @@ export function ScaffoldDataProvider({ children }) {
         });
     }
     getData();
-  }, []);
+  }, [refresh]);
 
   return (
     <AllDataScaffoldContext.Provider
@@ -48,6 +50,11 @@ export function ScaffoldDataProvider({ children }) {
         setcartitems,
         username,
         setusername,
+        setrefresh,
+        cartObject,
+        setcartObject,
+        changethestateofcartsitems,
+        currentthestateofcartsitems,
       }}
     >
       {children}

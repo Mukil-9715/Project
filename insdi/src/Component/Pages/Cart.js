@@ -1,21 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../nav.css";
 import { Card, Button } from "antd";
 import { useNavigate } from "react-router-dom";
 import ScrollToTop from "../ScrollToTop";
 import Nav from "../Nav";
 import Footer from "../Footer";
+import AllDataScaffoldContext from "../ScaffoldContext/DataContext";
 
 const { Meta } = Card;
 
 const Cart = () => {
   const navigation = useNavigate();
+  let { cartObject} = useContext( AllDataScaffoldContext);
+  const CartObject =cartObject
   useEffect(() => {
     let username = localStorage.getItem("username");
     if (username === "" || username === null) {
       navigation("/");
     }
   }, []);
+  console.log(CartObject) 
   // //   debugger;
   // return Object.keys(fromhomecart).map((e) => {
   //   let valueofthekey = fromhomecart[e];
