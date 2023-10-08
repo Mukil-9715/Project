@@ -15,21 +15,6 @@ const LoginPage = () => {
     useEffect(() => {
       localStorage.clear()
     }, []);
-    
-
-  // const [respond, setrespond] = useState([])
-  // useEffect(() => {
-  //   function getData() {
-  //     fetch("http://localhost:8000/posts")
-  //       .then((res) => res.json())
-  //       .then((message) => {
-  //         // localStorage.setItem("Id", message)
-  //         // debugger;
-  //         setrespond(message);
-  //       });
-  //   }
-  //   getData();
-  // }, []);
   
 
   const onFinish = (values) => {
@@ -70,11 +55,9 @@ const LoginPage = () => {
   };
   return (
     <div className="">
-      {/* <Divider orientation="center">Percentage columns</Divider> */}
       <Row className="container">
         <Col className="left flexl" flex="650px">
           <div className="parent brl backgroundImage ">
-            {/* <img src="https://images.pexels.com/photos/379960/pexels-photo-379960.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" width="200" />  */}
           </div>
         </Col>
         <Col className="right flexr" flex="auto">
@@ -88,7 +71,7 @@ const LoginPage = () => {
                 name="normal_login"
                 className="login-forms"
                 initialValues={{
-                  remember: false,
+                  remember: true,
                 }}
                 onFinish={onFinish}
               >

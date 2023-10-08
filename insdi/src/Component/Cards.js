@@ -13,8 +13,6 @@ const Cards = () => {
   );
 
   const scaffoldData = scaffold;
-  // const [filtredData, setfiltredData] = useState([]);
-  // console.log(filtredData);
   console.log(searchvalue);
   let changethestateofcartsitems = setcartitems;
   const filtered = [];
@@ -25,9 +23,7 @@ const Cards = () => {
       console.log(scaffoldData);
       const checkSearch = searchvalue.toString().toLowerCase();
       if (data.name.toLowerCase().includes(checkSearch)) {
-        // debugger
         filtered.push(data);
-        // setfiltredData(filtered);
       }
     });
     console.log(filtered);
@@ -35,14 +31,7 @@ const Cards = () => {
 
   handleCardsSearch();
 
-  // debugger
   function getCartDetails(SeperateCardData) {
-    // let cartobject = JSON.parse(JSON.stringify(currentthestateofcartsitems));
-    //   cartobject[SeperateCardData.name] =
-    //        { ...SeperateCardData}
-
-    // obj.push(cartobject);
-    // console.log(cartobject);
     changethestateofcartsitems(SeperateCardData);
 
     console.log(SeperateCardData);

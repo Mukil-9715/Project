@@ -11,7 +11,7 @@ import Nav from "./Component/Nav";
 import Footer from "./Component/Footer";
 import Buypage from "./Component/Pages/Buypage";
 import Loginconfirm from "./Component/Loginconfirm";
-import Cart from "./Component/Pages/Cart";
+import CartModule from "./Component/Pages/CartModule";
 //implenting lazy loader
 
 // const Registerform = React.lazy(()=> import ("./Component/Pages/Registerform"))
@@ -30,7 +30,7 @@ function App() {
         <Route path="/Registerform" element={<Registerform />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/CardDetails" element={<Productspage />} />
-        <Route path="/Cart" element={<Cart />} />
+        <Route path="/Cart" element={<CartModule />} />
         <Route path="/Buy" element={<Buypage />} />
         <Route path="/Loginconfirm" element={<Loginconfirm />} />
       </Routes>

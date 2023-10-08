@@ -9,9 +9,12 @@ export function ScaffoldDataProvider({ children }) {
   const [searchvalue, setsearchvalue] = useState([]);
   const [Prices, setPrices] = useState("$0");
   const [username, setusername] = useState();
-  const [ currentthestateofcartsitems, changethestateofcartsitems] = useState();
+  const [currentthestateofcartsitems, changethestateofcartsitems] = useState();
   const [refresh, setrefresh] = useState({});
-  const [cartObject, setcartObject] = useState({});
+  const [itemsDetails, setitemsDetails] = useState({});
+  const [itemsDetails1, setitemsDetails1] = useState({});
+  const [scDetails, setScDetails] = useState({});
+
   useEffect(() => {
     function getData() {
       fetch("http://localhost:8000/CardDetails")
@@ -51,10 +54,14 @@ export function ScaffoldDataProvider({ children }) {
         username,
         setusername,
         setrefresh,
-        cartObject,
-        setcartObject,
         changethestateofcartsitems,
         currentthestateofcartsitems,
+        scDetails, 
+        setScDetails, 
+        itemsDetails,
+        setitemsDetails,
+        itemsDetails1,
+        setitemsDetails1,
       }}
     >
       {children}

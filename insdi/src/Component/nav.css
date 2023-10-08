@@ -154,18 +154,25 @@ li {
 }
 .maincart {
   height: 100%;
-  margin-block: auto;
+  /* margin-block: auto; */
   width: 80vw;
+  padding-bottom: 40px;
   /* background-color: blue; */
   margin-inline: auto;
 }
 .cart {
+  margin-top: 5rem;
   /* height: 100%; */
-  width: 75vw;
-  height: 80vh;
+  /* width: 75vw; */
+  /* height: 80vh; */
   /* background-color: red; */
-  margin-inline: auto;
-  margin-block: auto;
+  /* margin-inline: auto; */
+  /* margin-block: auto; */
+  margin-bottom: 50px;
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 .links {
   color: #fff;
@@ -207,3 +214,8 @@ li {
   text-decoration: none;
 }
 
+.limited-lines {
+  overflow: hidden; /* Hide any overflowing content */
+  max-height: 5rem; /* Set a maximum height for three lines */
+  line-height: 1em; /* Set the line height equal to the font size */
+}
