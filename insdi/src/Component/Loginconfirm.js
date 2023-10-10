@@ -8,7 +8,7 @@ import React, { useContext, useEffect } from "react";
 import AllDataScaffoldContext from "./ScaffoldContext/DataContext";
 // import Nav from './Nav';
 
-const Loginconfirm = () => {
+const Loginconfirm = ({setloginforms,loginfo}) => {
   const navigation = useNavigate() 
   useEffect(() => {
     let username = localStorage.getItem('username')
@@ -21,16 +21,18 @@ const Loginconfirm = () => {
   const respond = postResponse;
 
   const onFinish = (values) => {
+
+    console.log(values)
     const loginHandle = () => {
       respond.map((response) => {
         if (response.email !== values.email) {
-          alert("please enter valid emails");
+          // alert("please enter valid emails");
         } else if (response.email === values.email) {
           if (response.password === values.password) {
-            usenavigate("/Home");
+            // usenavigate("/Home");
             // console.log("success");
           } else {
-            alert("please enter valid password");
+            // alert("please enter valid password");
           }
         }
       });
@@ -38,6 +40,11 @@ const Loginconfirm = () => {
     //  debugger
     loginHandle();
   };
+  const handelback=()=>{
+    loginfo(true)
+    setloginforms(false)
+
+  }
   return (
     <div className="loginconfirm">
       <div className="brh-loginconfirm ">
@@ -98,6 +105,9 @@ const Loginconfirm = () => {
                 // onClick={onFinish}
               >
                 Log in
+              </Button>
+              <Button onClick={()=>{handelback()}}>
+                Back
               </Button>
             </Form.Item>
           </Form>

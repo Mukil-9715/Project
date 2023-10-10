@@ -7,6 +7,11 @@ import {
   ProfileOutlined,
 } from "@ant-design/icons";
 
+const status ={
+  true:"finish",
+  false:"wait",
+}
+
 const Stepper = () => {
   return (
     <div className="buyPage">
@@ -15,17 +20,17 @@ const Stepper = () => {
             items={[
               {
                 title: "Login",
-                status: "finish",
+                status: status.true,
                 icon: <UserOutlined />,
               },
               {
                 title: "Delivery Address",
-                status: "finish",
+                status: status.true,
                 icon: <SolutionOutlined />,
               },
               {
                 title: "Order Summary",
-                status: "process",
+                status: status.true,
                 icon: <ProfileOutlined />,
               },
               {

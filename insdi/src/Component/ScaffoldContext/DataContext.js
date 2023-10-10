@@ -14,6 +14,7 @@ export function ScaffoldDataProvider({ children }) {
   const [itemsDetails, setitemsDetails] = useState({});
   const [itemsDetails1, setitemsDetails1] = useState({});
   const [scDetails, setScDetails] = useState({});
+  const [deliveryformdetails, setDeliveryformdetails] = useState({});
 
   useEffect(() => {
     function getData() {
@@ -61,7 +62,7 @@ export function ScaffoldDataProvider({ children }) {
         itemsDetails,
         setitemsDetails,
         itemsDetails1,
-        setitemsDetails1,
+        setitemsDetails1,deliveryformdetails, setDeliveryformdetails
       }}
     >
       {children}

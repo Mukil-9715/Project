@@ -1,72 +1,111 @@
 // import React from "react";
-import React, { useState } from "react";
-import "./Pages/LoginPage.css";
+import { Button, Form, Input } from "antd";
+import React, { useContext } from "react";
 import "../Component/nav.css";
-import { Button, Checkbox, Form, Input } from "antd";
+import "./Pages/LoginPage.css";
+import AllDataScaffoldContext from "./ScaffoldContext/DataContext";
 
-const Deliveryform = () => {
+const Deliveryform = ({DeliveryFormStatusSet, DeliveryFormResultStatusSet }) => {
+  const { deliveryformdetails, setDeliveryformdetails } = useContext(
+    AllDataScaffoldContext
+  );
   const handleForm = (values) => {
     console.log(values);
+    setDeliveryformdetails(values);
+    DeliveryFormStatusSet(false)
+    DeliveryFormResultStatusSet(true)
   };
-  return (
-    <div className="loginconfirm">
-      <div className="brh-loginconfirm ">
-        {/* <div className="width8 flex"> */}
+  // const handleCancel=()=>{
 
-        <Form
-          name="detailforms"
-          onFinish={handleForm}
-          //   labelCol={{
-          //     span: 4,
-          //   }}
-          wrapperCol={{
-            span: 14,
-          }}
-          style={{
-            maxWidth: 600,
-          }}
-        >
-          <Form.Item name="Name">
-            {/* <label>Name</label> */}
-            <Input placeholder="Name" />
-          </Form.Item>
-          <Form.Item name="Mobile Number">
-            <Input placeholder="Mobile Number" />
-          </Form.Item>
-          <Form.Item name="Pincode">
-            <Input placeholder="Pincode" />
-          </Form.Item>
-          <Form.Item name="Locality">
-            <Input placeholder="Locality" />
-          </Form.Item>
-          <Form.Item name="City/District/Town">
-            <Input placeholder="City/District/Town" />
-          </Form.Item>
-          <Form.Item name="State">
-            <Input placeholder="State" />
-          </Form.Item>
-          <Form.Item name="Landmark">
-            <Input placeholder="Landmark" />
-          </Form.Item>
-          <Form.Item name="Alternative Phone">
-            <Input placeholder="Alternative Phone" />
-          </Form.Item>
-          <div className="flex halwidth">
-            <Form.Item>
-              <Button htmlType="submit" >
-                {" "}
-                Save and Delivery Here
-              </Button>
-              <div>
-                <a herf>Cancel </a>
-              </div>
+  // }
+
+  return (
+    <>
+      <Form
+        name="detailforms"
+        onFinish={handleForm}
+        //   labelCol={{
+        //     span: 4,
+        //   }}
+        wrapperCol={{
+          span: 17,
+        }}
+        style={{
+          maxWidth: 900,
+          marginBlock: 60,
+        }}
+        // className="flex"
+      >
+        {/* <div className="flex_c"> */}
+        <div className="flex">
+          <div className="flex_col">
+            <lable className="MB">Name : </lable>
+            <lable className="MB"> Flat Number : </lable>
+            <lable className="MB"> Street : </lable>
+            <lable className="MB"> City/District/Town : </lable>
+            <lable className="MB0"> State : </lable>
+            <lable className="MB0"> Landmark : </lable>
+            <lable className="MB"> Pincode : </lable>
+            <lable className="MB"> Mobile Number : </lable>
+            <lable className="MB0"> Alternative Phone : </lable>
+            {/* <lable className="MB"> Name : </lable> */}
+            {/* <lable className="MB"> Name : </lable> */}
+          </div>
+
+          <div>
+            <Form.Item name="Name">
+              <Input className="input" type="text" placeholder="Name" />
+            </Form.Item>
+            <Form.Item name="Flat Number">
+              <Input className="input" type="text" placeholder="Flat Number" />
+            </Form.Item>
+
+            <Form.Item name="Street">
+              <Input className="input" type="text" placeholder="Street" />
+            </Form.Item>
+            <Form.Item name="City/District/Town">
+              <Input
+                className="input"
+                type="text"
+                placeholder="City/District/Town"
+              />
+            </Form.Item>
+            <Form.Item name="State">
+              <Input className="input" type="text" placeholder="State" />
+            </Form.Item>
+            <Form.Item name="Landmark">
+              <Input className="input" type="text" placeholder="Landmark" />
+            </Form.Item>
+            <Form.Item name="Pincode Number">
+              <Input className="input" type="text" placeholder="Pincode" />
+            </Form.Item>
+            <Form.Item name="Phone Number">
+              <Input
+                className="input"
+                type="text"
+                placeholder="Mobile Number"
+              />
+            </Form.Item>
+            <Form.Item name="Alternative Phone">
+              <Input
+                className="input"
+                type="text"
+                placeholder="Alternative Phone"
+              />
             </Form.Item>
           </div>
-        </Form>
-
+        </div>
+        <div style={{ textAlign: "center" }}>
+          <Form.Item>
+            <Button style={{width:"100px",fontWeight:"600"}} type="primary" htmlType="submit">Save</Button>
+            <div>
+            <Button style={{width:"100px",fontWeight:"600"}}    htmlType="submit">Cancel</Button>
+            </div>
+          </Form.Item>
+        </div>
         {/* </div> */}
-      </div>
-    </div>
+      </Form>
+    </>
   );
 };
 
