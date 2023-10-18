@@ -1,49 +1,33 @@
-import React from 'react'
+import React, { useContext } from "react";
 import { Steps } from "antd";
-import {
-  SolutionOutlined,
-  UserOutlined,
-  CreditCardOutlined,
-  ProfileOutlined,
-} from "@ant-design/icons";
-
-const status ={
-  true:"finish",
-  false:"wait",
-}
-
+import AllDataScaffoldContext from "./ScaffoldContext/DataContext";
 const Stepper = () => {
+  const {stepperControler} = useContext(AllDataScaffoldContext)
+
   return (
     <div className="buyPage">
-        <div className="step">
-          <Steps
-            items={[
-              {
-                title: "Login",
-                status: status.true,
-                icon: <UserOutlined />,
-              },
-              {
-                title: "Delivery Address",
-                status: status.true,
-                icon: <SolutionOutlined />,
-              },
-              {
-                title: "Order Summary",
-                status: status.true,
-                icon: <ProfileOutlined />,
-              },
-              {
-                title: "Payment",
-                status: "wait",
-                icon: <CreditCardOutlined />,
-              },
-            ]}
-          />
-        </div>
-        <div></div>
+      <div className="step">
+        <Steps
+          current={stepperControler}
+          items={[
+            {
+              title: "Login",
+            },
+            {
+              title: "Delivery Address",
+            },
+            {
+              title: "Order Summary",
+            },
+            {
+              title: "Payment",
+            },
+          ]}
+        />
       </div>
-  )
-}
+      <div></div>
+    </div>
+  );
+};
 
-export default Stepper
+export default Stepper;

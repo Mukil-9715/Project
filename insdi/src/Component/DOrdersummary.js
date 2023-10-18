@@ -37,13 +37,13 @@ const DOrdersummary = () => {
                   -
                 </Button>
                 <span style={{ padding: 20 }}>{count}</span>
-                <Button >+</Button>
+                <Button>+</Button>
               </div>
             </div>
           </div>
           <div>delivery </div>
         </div>
-
+        <hr></hr>
         <div>
           <Button>Continue</Button>
         </div>

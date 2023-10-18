@@ -3,7 +3,7 @@ import AllDataScaffoldContext from './ScaffoldContext/DataContext';
 import { Button } from 'antd';
 
 const Deliveryformresult = ({DeliveryFormStatusSet, loginfos, setDeliverydevision, setordersummarys, DeliveryFormResultStatusSet}) => {
-  const {  deliveryformdetails } = useContext(AllDataScaffoldContext);
+  const {  deliveryformdetails,setStepperControler } = useContext(AllDataScaffoldContext);
 const handeEdit=()=>{
     DeliveryFormStatusSet(true) 
     DeliveryFormResultStatusSet(false)
@@ -11,12 +11,13 @@ const handeEdit=()=>{
 const handeContinue=()=>{
     setordersummarys(true)
     setDeliverydevision(false)
-    
+    setStepperControler(2)
 }
 const handeBack=()=>{
     loginfos(true)
     setDeliverydevision(false)
-}
+    setStepperControler(0)
+  }
   return (
       <div className='flex1' style={{width:"100%"}} >
         <div className='text_h2'>Address :</div>

@@ -15,6 +15,7 @@ export function ScaffoldDataProvider({ children }) {
   const [itemsDetails1, setitemsDetails1] = useState({});
   const [scDetails, setScDetails] = useState({});
   const [deliveryformdetails, setDeliveryformdetails] = useState({});
+  const [stepperControler, setStepperControler] = useState(0);
 
   useEffect(() => {
     function getData() {
@@ -57,12 +58,16 @@ export function ScaffoldDataProvider({ children }) {
         setrefresh,
         changethestateofcartsitems,
         currentthestateofcartsitems,
-        scDetails, 
-        setScDetails, 
+        scDetails,
+        setScDetails,
         itemsDetails,
         setitemsDetails,
         itemsDetails1,
-        setitemsDetails1,deliveryformdetails, setDeliveryformdetails
+        setitemsDetails1,
+        deliveryformdetails,
+        setDeliveryformdetails,
+        stepperControler,
+        setStepperControler,
       }}
     >
       {children}

@@ -14,12 +14,11 @@ import ScrollToTop from "../ScrollToTop";
 
 const Buypage = () => {
   const navigation = useNavigate() 
-  const [stepper, setstepper] = useState(false)
   const [loginfo, setloginfo] = useState(true)
   const [loginform, setloginform] = useState(false)
   const [Deliverydevision, setDeliverydevision] = useState(false)
-  const [ordersummary, setordersummary] = useState(false)
-  const [payment, setpayment] = useState(true)
+  const [ordersummary, setordersummary] = useState(true)
+  const [payment, setpayment] = useState(false)
 
 
   useEffect(() => {
@@ -29,9 +28,9 @@ const Buypage = () => {
     }
   }, [])
   // setloginfo(true)
-  return (
+  return (  
     <div className="buypage"> 
-      <Nav />
+      <Nav/>
       <ScrollToTop />
       <Stepper/>
       {loginfo&&(<Logininfo loginfo={setloginfo} setloginforms={setloginform} setDeliverydevisions={setDeliverydevision} />)} 

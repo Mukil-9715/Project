@@ -9,7 +9,7 @@ const Deliverydevision = ({loginfo, setDeliverydevisions,setordersummary}) => {
     <div className="loginconfirm">
       <div className="brh-loginconfirm ">
 
-        {DeliveryFormStatus&&(<Deliveryform  DeliveryFormStatusSet={setDeliveryFormStatus} DeliveryFormResultStatusSet={setDeliveryFormResultStatus} />)}
+        {DeliveryFormStatus&&(<Deliveryform  loginfos={loginfo} setDeliverydevision={setDeliverydevisions} DeliveryFormStatusSet={setDeliveryFormStatus} DeliveryFormResultStatusSet={setDeliveryFormResultStatus} />)}
         {deliveryFormResultStatus&&(<Deliveryformresult loginfos={loginfo} setDeliverydevision={setDeliverydevisions} setordersummarys={setordersummary} DeliveryFormStatusSet={setDeliveryFormStatus} DeliveryFormResultStatusSet={setDeliveryFormResultStatus} />)}
       </div>
       </div>

@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import profilepic from "../Asset/pngwing.com.png";
 import "../Component/nav.css";
 import "./Pages/LoginPage.css";
 import { Button } from "antd";
+import AllDataScaffoldContext from "./ScaffoldContext/DataContext";
 
 const Logininfo = ({setDeliverydevisions, setloginforms,loginfo}) => {
+  const {setStepperControler} = useContext(AllDataScaffoldContext)
 
 
 
@@ -17,7 +19,7 @@ const Logininfo = ({setDeliverydevisions, setloginforms,loginfo}) => {
    const  handlecontinoue =()=>{
      setDeliverydevisions(true)
     loginfo(false)
-
+    setStepperControler(1)
    }
 
 

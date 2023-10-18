@@ -5,8 +5,8 @@ import "../Component/nav.css";
 import "./Pages/LoginPage.css";
 import AllDataScaffoldContext from "./ScaffoldContext/DataContext";
 
-const Deliveryform = ({DeliveryFormStatusSet, DeliveryFormResultStatusSet }) => {
-  const { deliveryformdetails, setDeliveryformdetails } = useContext(
+const Deliveryform = ({loginfos,setDeliverydevision, DeliveryFormStatusSet, DeliveryFormResultStatusSet }) => {
+  const { deliveryformdetails, setStepperControler,setDeliveryformdetails } = useContext(
     AllDataScaffoldContext
   );
   const handleForm = (values) => {
@@ -15,9 +15,11 @@ const Deliveryform = ({DeliveryFormStatusSet, DeliveryFormResultStatusSet }) => 
     DeliveryFormStatusSet(false)
     DeliveryFormResultStatusSet(true)
   };
-  // const handleCancel=()=>{
-
-  // }
+  const handleCancel=()=>{
+    loginfos(true)
+    setDeliverydevision(false)
+    setStepperControler(0)
+  }
 
   return (
     <>
@@ -99,7 +101,7 @@ const Deliveryform = ({DeliveryFormStatusSet, DeliveryFormResultStatusSet }) => 
           <Form.Item>
             <Button style={{width:"100px",fontWeight:"600"}} type="primary" htmlType="submit">Save</Button>
             <div>
-            <Button style={{width:"100px",fontWeight:"600"}}    htmlType="submit">Cancel</Button>
+            <Button style={{width:"100px",fontWeight:"600"}} onClick={()=>{handleCancel()}} htmlType="submit">Cancel</Button>
             </div>
           </Form.Item>
         </div>
