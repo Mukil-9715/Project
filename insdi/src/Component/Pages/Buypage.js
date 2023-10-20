@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Footer from "../Footer";
 import Nav from "../Nav";
 
@@ -11,6 +11,7 @@ import Deliverydevisions from "../Deliverydevision";
 import Logininfo from "../Logininfo";
 import Payment from "../Payment";
 import ScrollToTop from "../ScrollToTop";
+import AllDataScaffoldContext from "../ScaffoldContext/DataContext";
 
 const Buypage = () => {
   const navigation = useNavigate() 
@@ -19,9 +20,11 @@ const Buypage = () => {
   const [Deliverydevision, setDeliverydevision] = useState(false)
   const [ordersummary, setordersummary] = useState(true)
   const [payment, setpayment] = useState(false)
+  const {setStepperControler} = useContext(AllDataScaffoldContext)
 
 
   useEffect(() => {
+    setStepperControler(0)
     let username = localStorage.getItem('username')
     if (username === "" || username === null){
       navigation("/")
